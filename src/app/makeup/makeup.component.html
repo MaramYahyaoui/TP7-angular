@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        <table class="table table-striped">
+    <thead>
+        <tr> <th>Id</th><th>Nom</th> <th>Price</th> <th>Date Creation</th> </tr>
+    </thead>
+
+    <tbody *ngFor="let makeup of makeup">
+    
+    <tr >
+    <td>{{makeup.idMakeup}}</td>
+    <td>{{makeup.nomMakeup}}</td>
+    <td>{{makeup.prixMakeup}}</td>
+    <td>{{makeup.dateCreation | date:'dd/MM/yyyy'}}</td>
+    <td><a class="btn btn-danger" (click)="supprimerMakeup(makeup)">Delete</a></td>
+    <td><a class="btn btn-success" [routerLink]="['/updateMakeup',makeup.idMakeup]">Modify</a></td>
+    </tr>
+    </tbody>
+    
+    </table>
+    </div>
+    </div>
+    </div>
